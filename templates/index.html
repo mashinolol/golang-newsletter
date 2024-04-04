@@ -5,6 +5,16 @@
 <main class="px-3">
     <h1>Cover your page.</h1>
     <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores veritatis pariatur architecto voluptate, sint amet soluta ipsum debitis suscipit sapiente nam dolore neque expedita repellendus quasi voluptas enim quas ullam?</p>
+    
+    {{ range . }}
+    <div class="alert alert-danger">
+        <h2>{{ .Title }}</h2>
+        <p>{{ .Anons }}</p>
+        <a href="/post/{{ .Id }}" class="btn btn-danger">Learn more</a>
+    </div>
+    {{ else }}
+    <p class="lead">There is no articles</p>
+    {{ end }}
     <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Learn more</a>
     </p>
 </main>
